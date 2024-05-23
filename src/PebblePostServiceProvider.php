@@ -5,6 +5,7 @@ namespace Astrogoat\PebblePost;
 use Helix\Lego\Apps\App;
 use Helix\Lego\LegoManager;
 use Spatie\LaravelPackageTools\Package;
+use Helix\Lego\Apps\Services\IncludeFrontendViews;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Astrogoat\PebblePost\Settings\PebblePostSettings;
 
@@ -16,11 +17,11 @@ class PebblePostServiceProvider extends PackageServiceProvider
             ->name('pebble-post')
             ->settings(PebblePostSettings::class)
             ->migrations([
-                __DIR__ . '/../database/migrations',
                 __DIR__ . '/../database/migrations/settings',
             ])
-            ->backendRoutes(__DIR__.'/../routes/backend.php')
-            ->frontendRoutes(__DIR__.'/../routes/frontend.php');
+            ->includeFrontendViews(function (IncludeFrontendViews $frontendViews) {
+                return $frontendViews->addToEnd('pebble-post::script');
+            });
     }
 
     public function registeringPackage()
