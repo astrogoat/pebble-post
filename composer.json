@@ -1,17 +1,18 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "astrogoat/pebble-post",
+    "description": "A PebblePost app for Strata",
     "keywords": [
-        ":vendor_name",
+        "astrogoat",
         "laravel",
-        ":package_slug"
+        "pebble-post",
+        "strata"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/astrogoat/pebble-post",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Laura Tonning",
+            "email": "tonning@gmail.com",
             "role": "Developer"
         }
     ],
@@ -22,14 +23,10 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-<<<<<<< HEAD
-        "astrogoat/strata": "^0.6.0",
-=======
-        "astrogoat/strata": "^0.3.0|^0.4.0|^0.5.0|^0.6.0",
->>>>>>> 30d598a6e907e276a310073df0d3ea1274b6bdee
+        "php": "^8.3",
+        "astrogoat/strata": "^0.6.9",
         "spatie/laravel-package-tools": "^1.4.3",
-        "illuminate/contracts": "^8.37 || ^9.9|^10.0"
+        "illuminate/contracts": "10.0"
     },
     "require-dev": {
         "nunomaduro/collision": "^5.3|^7.0",
@@ -41,13 +38,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Astrogoat\\PebblePost\\": "src",
+            "Astrogoat\\PebblePost\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Astrogoat\\PebblePost\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -55,15 +52,19 @@
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "vaimo/composer-patches": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Astrogoat\\PebblePost\\PebblePostServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "PebblePost": "Astrogoat\\PebblePost\\PebblePostFacade"
             }
         }
     },

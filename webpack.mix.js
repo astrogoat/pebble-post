@@ -11,6 +11,6 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.postCss('resources/css/skeleton.css', 'public/css', [require("tailwindcss")])
+mix.postCss('resources/css/pebble-post.css', 'public/css', [require("tailwindcss")])
     // Uncomment if you need compiled Javascript
-    // .js('resources/js/skeleton.js', 'public/js')
+    // .js('resources/js/pebble-post.js', 'public/js')
