@@ -2,9 +2,9 @@
 
 namespace Astrogoat\PebblePost\Tests;
 
+use Astrogoat\PebblePost\PebblePostServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Astrogoat\PebblePost\PebblePostServiceProvider;
 
 class TestCase extends Orchestra
 {
